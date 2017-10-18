@@ -15,6 +15,7 @@ import PlaygroundSupport
 // Create canvas
 let canvas = Canvas(width: 400, height: 300)
 
+
 /*:
  ## Add your code below
  
@@ -22,9 +23,37 @@ let canvas = Canvas(width: 400, height: 300)
  
  Use whitespace and comments as appropriate.
  */
-// Replace this comment with your first comment – what is the goal of the code you're about to write?
+// Craete a starting point for travelling through perlin noise space
+var start = 0.0
 
 
+// Create a perlin noise generator
+let p = PerlinGenerator()
+
+// Draw vertical lines across the canvas
+for x in stride(from: 0, through: 400, by: 1){
+    
+    // move through perlin noise space
+    start += 0.01 // larger means more variation
+                 // smaller means less variation
+    
+    
+    // Get Perlin noise (gives us a random number between -1 and 1)
+   let randomValue = p.perlinNoise(x: start)
+    
+    // Convert to a range between 0 and 100
+    let height = map(value: randomValue, fromLower: -1, fromUpper: 1, toLower: 0, toUpper: 100)
+    
+    // make the height an integer
+    let toY = Int(height)
+    
+    // Set the color
+    canvas.lineColor = Color.init(hue: 10, saturation: 80, brightness: toY, alpha: 100)
+    
+    // Draw the lines
+    canvas.drawLine(fromX: x, fromY: 0, toX: x, toY: toY)
+    
+}
 
 /*:
  ## Use source control
