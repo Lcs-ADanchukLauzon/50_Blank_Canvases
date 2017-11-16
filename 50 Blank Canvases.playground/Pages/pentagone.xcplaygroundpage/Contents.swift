@@ -13,16 +13,17 @@ import Cocoa
 import PlaygroundSupport
 
 // Create canvas
-let canvas = Canvas(width: 400, height: 300)
+let canvas = Canvas(width: 400, height: 400)
+canvas.translate(byX: 100, byY: 100)
+canvas.defaultLineWidth = 5
 
-/*:
- ## Add your code below
- 
- Be sure to write human-readable code.
- 
- Use whitespace and comments as appropriate.
- */
-// Replace this comment with your first comment – what is the goal of the code you're about to write?
+
+
+for _ in 1...5{
+    canvas.drawLine(fromX: 0, fromY: 0, toX: 100, toY: 0)
+    canvas.translate(byX: 100, byY: 0)
+    canvas.rotate(by: 72)
+}
 
 
 
