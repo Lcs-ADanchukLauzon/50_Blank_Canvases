@@ -15,10 +15,9 @@ import PlaygroundSupport
 // Create canvas
 let canvas = Canvas(width: 400, height: 400)
 canvas.translate(byX: 100, byY: 100)
+canvas.defaultLineWidth = 5
 
-
-for i in 1...4{
-   i
+for _ in 1...4{
     canvas.drawLine(fromX: 0, fromY: 0, toX: 200, toY: 0)
     canvas.translate(byX: 200, byY: 0)
     canvas.rotate(by: 90)
