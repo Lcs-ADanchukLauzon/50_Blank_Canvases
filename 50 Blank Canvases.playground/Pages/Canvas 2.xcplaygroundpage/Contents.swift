@@ -34,21 +34,23 @@ let p = PerlinGenerator()
 for x in stride(from: 0, through: 400, by: 1){
     
     // move through perlin noise space
-    start += 0.01 // larger means more variation
+    start += 0.1 // larger means more variation
                  // smaller means less variation
     
     
     // Get Perlin noise (gives us a random number between -1 and 1)
    let randomValue = p.perlinNoise(x: start)
     
+    
+    
     // Convert to a range between 0 and 100
-    let height = map(value: randomValue, fromLower: -1, fromUpper: 1, toLower: 0, toUpper: 100)
+    let height = map(value: randomValue, fromLower: -1, fromUpper: 1, toLower: 0, toUpper: 200)
     
     // make the height an integer
     let toY = Int(height)
     
     // Set the color
-    canvas.lineColor = Color.init(hue: 10, saturation: 80, brightness: toY, alpha: 100)
+    canvas.lineColor = Color.init(hue: toY, saturation: 100, brightness: 100, alpha: 100)
     
     // Draw the lines
     canvas.drawLine(fromX: x, fromY: 0, toX: x, toY: toY)
