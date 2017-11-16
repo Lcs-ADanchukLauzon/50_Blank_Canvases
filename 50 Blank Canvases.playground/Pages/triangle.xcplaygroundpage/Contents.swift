@@ -22,8 +22,9 @@ let canvas = Canvas(width: 400, height: 400)
 canvas.translate(byX: 75, byY: 100)
 canvas.drawAxes()
 canvas.defaultLineWidth = 5
-//step 2 draw a side and rotate
 
+
+//step 2 draw a side and rotate
 canvas.drawLine(fromX: 0, fromY: 0, toX: 200, toY: 0)
 canvas.translate(byX: 200, byY: 0)
 canvas.rotate(by: 120)
@@ -34,6 +35,7 @@ canvas.drawAxes()
 canvas.drawLine(fromX: 0, fromY: 0, toX: 200, toY: 0)
 canvas.translate(byX: 200, byY: 0)
 canvas.rotate(by: 120)
+
 
 // step 3 x 2
 canvas.drawAxes()

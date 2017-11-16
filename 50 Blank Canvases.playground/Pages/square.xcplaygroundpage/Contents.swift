@@ -13,18 +13,16 @@ import Cocoa
 import PlaygroundSupport
 
 // Create canvas
-let canvas = Canvas(width: 400, height: 300)
-
-/*:
- ## Add your code below
- 
- Be sure to write human-readable code.
- 
- Use whitespace and comments as appropriate.
- */
-// Replace this comment with your first comment – what is the goal of the code you're about to write?
+let canvas = Canvas(width: 400, height: 400)
+canvas.translate(byX: 100, byY: 100)
 
 
+for i in 1...4{
+   i
+    canvas.drawLine(fromX: 0, fromY: 0, toX: 200, toY: 0)
+    canvas.translate(byX: 200, byY: 0)
+    canvas.rotate(by: 90)
+}
 
 /*:
  ## Use source control
